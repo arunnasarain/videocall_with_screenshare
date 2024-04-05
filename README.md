@@ -19,7 +19,7 @@ This is a web-based video conferencing platform built using `Node.js, PeerJS, an
 - Clone the repository:
 
 ```bash
-git clone https://github.com/your_username/zoom-call-clone.git 
+git clone https://github.com/arunnasarain/videocall_with_screenshare.git 
 ```
 
 - Install dependencies:
