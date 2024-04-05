@@ -1,0 +1,24 @@
+{
+  "name": "screen-share-nodejs",
+  "version": "1.0.0",
+  "description": "ScreenShare - Video Calling and Screen Sharing Application ScreenShare is a video calling and screen sharing application built using JavaScript, Express, Node.js, SocketIO, and PeerJS. It enables users to connect via video chat while sharing their computer screens with each other, facilitating collaboration and communication in various scenarios.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "i": "^0.3.7",
+    "peer": "^1.0.2",
+    "socket.io": "^4.7.5",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
