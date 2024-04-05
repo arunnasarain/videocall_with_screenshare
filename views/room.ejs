@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenShare</title>
+    <script>
+    const ROOM_ID = "<%= roomId %>"
+    const USERNAME = prompt('Enter your name')
+    </script>
+    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="script.js" defer></script>
+    <style>
+        /* CSS styles for video grid */
+        #video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .videoBox {
+            margin: 10px;
+            text-align: center;
+        }
+
+        video {
+            width: 300px;
+            height: 200px;
+        }
+
+        /* CSS styles for chat box */
+        #chat-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        /* CSS styles for chat input */
+        #chat-input {
+            width: calc(100% - 70px);
+            margin-top: 10px;
+        }
+
+        /* CSS styles for send button */
+        #send-button {
+            width: 60px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video call application with Screen Share</h1>
+
+    <!-- Video grid container -->
+    <div id="video-grid">
+
+    </div>
+
+    <!-- Buttons for turning on/off audio and video and screenshare -->
+    <div>
+        <button id="toggle-audio" onclick="toggleAudio()">Toggle Audio</button>
+        <button id="toggle-video" onclick="toggleVideo()">Toggle Video</button>
+        <button id="screen-share" onclick="screenshare()">Screenshare</button>
+    </div>
+
+    <!-- Chat box for displaying messages -->
+    <div id="chat-grid"></div>
+
+    <!-- Input field for typing messages -->
+    <input type="text" id="chat-input" placeholder="Type your message here">
+
+    <!-- Button to send messages -->
+    <button id="send-button" onclick="sendMessage()" >Send</button>
+
+    <!-- To call screenshare function -->
+    <script>
+        function screenshare(){
+            console.log("Screenshare")
+            socket.emit('screenshare',ROOM_ID)
+        }
+    </script>
+</body>
+</html>
